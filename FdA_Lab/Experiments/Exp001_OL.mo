@@ -18,9 +18,9 @@ model Exp001_OL
     Placement(visible = true, transformation(origin = {-160, 60}, extent = {{-20, -20}, {20, 20}}, rotation = 0)));
   Modelica.Blocks.Math.Add ain annotation(
     Placement(visible = true, transformation(origin = {-90, 54}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  FdA_Lab.ApparatusModels.Mlin_App2TP_2p0z M2(ubar = 20, ybar = 21.6)  annotation(
+  FdA_Lab.ApparatusModels.Mlin_App2TP_2p0z M2(T1 = 80, T2 = 10, mu = 0.08,ubar = 20, ybar = 21.6)  annotation(
     Placement(visible = true, transformation(origin = {40, -40}, extent = {{-20, -20}, {20, 20}}, rotation = 0)));
-  FdA_Lab.ApparatusModels.Mlin_App2TP_3p1z M3(mu = 0.08, ubar = 20, ybar = 21.6)  annotation(
+  FdA_Lab.ApparatusModels.Mlin_App2TP_3p1z M3(T1 = 130, T2 = 50, T3 = 10, Tz = 120,mu = 0.08, ubar = 20, ybar = 21.6)  annotation(
     Placement(visible = true, transformation(origin = {101, -69}, extent = {{-21, -21}, {21, 21}}, rotation = 0)));
 equation
   connect(Apparatus.oT1, Probes.iT1) annotation(
@@ -48,6 +48,6 @@ equation
   annotation(
     Diagram(coordinateSystem(extent = {{-200, -100}, {200, 100}})),
     experiment(StartTime = 0, StopTime = 5400, Tolerance = 1e-6, Interval = 1),
-  __OpenModelica_commandLineOptions = "--matchingAlgorithm=PFPlusExt --indexReductionMethod=dynamicStateSelection -d=initialization,NLSanalyticJacobian,newInst",
+  __OpenModelica_commandLineOptions = "--matchingAlgorithm=PFPlusExt --indexReductionMethod=dynamicStateSelection -d=initialization,evaluateAllParameters,NLSanalyticJacobian,newInst +d=initialization ",
   __OpenModelica_simulationFlags(lv = "LOG_STATS", outputFormat = "mat", s = "dassl"));
 end Exp001_OL;
