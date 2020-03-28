@@ -51,5 +51,5 @@ equation
   connect(I.y, ppi.u2) annotation(
     Line(points = {{-18, 10}, {0, 10}, {0, 54}, {18, 54}, {18, 54}}, color = {0, 0, 127}));
 annotation(
-    Icon(graphics = {Text(origin = {2, 5}, extent = {{-64, 55}, {58, -65}}, textString = "PI\n1dof\naw_ae")}));
+    Icon(graphics = {Text(origin = {2, 5}, extent = {{-64, 55}, {58, -65}}, textString = "PI_CT\n1dof\naw_ae")}, coordinateSystem(initialScale = 0.1)));
 end PI_1dof_aw_ae;

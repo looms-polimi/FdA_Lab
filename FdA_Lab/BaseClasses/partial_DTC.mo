@@ -1,7 +1,7 @@
 within FdA_Lab.BaseClasses;
 
 model partial_DTC
-  parameter SI.Time Ts;
+  parameter SI.Time Ts=0.1;
   Modelica.Blocks.Interfaces.RealInput SP annotation(
     Placement(visible = true, transformation(origin = {-180, 60}, extent = {{-20, -20}, {20, 20}}, rotation = 0), iconTransformation(origin = {-120, 60}, extent = {{-20, -20}, {20, 20}}, rotation = 0)));
   Modelica.Blocks.Interfaces.RealInput PV annotation(
@@ -9,7 +9,7 @@ model partial_DTC
   Modelica.Blocks.Interfaces.RealOutput CS annotation(
     Placement(visible = true, transformation(origin = {180, 60}, extent = {{-20, -20}, {20, 20}}, rotation = 0), iconTransformation(origin = {120, -3.55271e-15}, extent = {{-20, -20}, {20, 20}}, rotation = 0)));
 protected
-  discrete Real cs;
+  discrete Real cs(start=0,fixed=true);
 equation
   CS = cs;
 
