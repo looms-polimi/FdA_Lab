@@ -30,7 +30,7 @@ equation
   connect(gK.y, ppi.u1) annotation(
     Line(points = {{-59, 66}, {-42, 66}}, color = {0, 0, 127}));
   connect(FOfb.y, ppi.u2) annotation(
-    Line(points = {{38, 10}, {-40, 10}, {-40, 54}, {-22, 54}, {-22, 54}}, color = {0, 0, 127}));
+    Line(points = {{38, 10}, {-1, 10}, {-1, 10}, {-50, 10}, {-50, 54}, {-22, 54}, {-22, 54}}, color = {0, 0, 127}));
   connect(sat.y, FOfb.u) annotation(
     Line(points = {{62, 60}, {100, 60}, {100, 10}, {62, 10}, {62, 10}}, color = {0, 0, 127}));
   annotation(

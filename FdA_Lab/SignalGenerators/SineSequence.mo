@@ -4,7 +4,7 @@ model SineSequence
   extends FdA_Lab.BaseClasses.partial_SG;
   parameter Real offset=0;
   parameter Real amplitude=20;
-  parameter Real start_time = 3000;
+  parameter Real start_time = 5400;
   parameter Real[:] periods={240,120,60};
   parameter Integer[:] n_periods={5,5,5};
   

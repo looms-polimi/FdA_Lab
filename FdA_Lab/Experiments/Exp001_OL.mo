@@ -6,12 +6,12 @@ model Exp001_OL
     Placement(visible = true, transformation(origin = {-20, 42}, extent = {{-20, -20}, {20, 20}}, rotation = 0)));
   FdA_Lab.Instrumentation.Probe3Ts_lag_noise_quant Probes annotation(
     Placement(visible = true, transformation(origin = {60, 42}, extent = {{-20, -20}, {20, 20}}, rotation = 0)));
-  Modelica.Blocks.Sources.RealExpression Ta(y = 273.15 + 20)  annotation(
+  Modelica.Blocks.Sources.RealExpression Te(y = 273.15 + 20)  annotation(
     Placement(visible = true, transformation(origin = {-90, 90}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Sources.RealExpression Q2 annotation(
     Placement(visible = true, transformation(origin = {-90, 30}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  FdA_Lab.ApparatusModels.Mlin_App2TP_1p0z M1(T = 80, mu = 0.08,ubar = 20, ybar = 21.6)  annotation(
-    Placement(visible = true, transformation(origin = {-20, -10}, extent = {{-20, -20}, {20, 20}}, rotation = 0)));
+  FdA_Lab.ApparatusModels.Mlin_App2TP_1p0z M1(T = 120, mu = 0.18,ubar = 20, ybar = 24.45)  annotation(
+    Placement(visible = true, transformation(origin = {-20, -12}, extent = {{-20, -20}, {20, 20}}, rotation = 0)));
   FdA_Lab.SignalGenerators.SineSequence sines annotation(
     Placement(visible = true, transformation(origin = {-160, 2}, extent = {{-20, -20}, {20, 20}}, rotation = 0)));
   FdA_Lab.SignalGenerators.StepSequence steps annotation(
@@ -31,7 +31,7 @@ equation
     Line(points = {{4, 30}, {36, 30}}, color = {0, 0, 127}));
   connect(Q2.y, Apparatus.iQ2) annotation(
     Line(points = {{-79, 30}, {-59.5, 30}, {-59.5, 42}, {-44, 42}}, color = {0, 0, 127}));
-  connect(Ta.y, Apparatus.iTa) annotation(
+  connect(Te.y, Apparatus.iTe) annotation(
     Line(points = {{-79, 90}, {-20, 90}, {-20, 66}}, color = {0, 0, 127}));
   connect(ain.y, Apparatus.iQ1) annotation(
     Line(points = {{-79, 54}, {-44, 54}}, color = {0, 0, 127}));
@@ -40,14 +40,14 @@ equation
   connect(sines.y, ain.u2) annotation(
     Line(points = {{-136, 2}, {-120, 2}, {-120, 48}, {-102, 48}}, color = {0, 0, 127}));
   connect(ain.y, M1.u) annotation(
-    Line(points = {{-78, 54}, {-70, 54}, {-70, -8}, {-44, -8}, {-44, -10}}, color = {0, 0, 127}));
+    Line(points = {{-78, 54}, {-70, 54}, {-70, -12}, {-44, -12}}, color = {0, 0, 127}));
   connect(ain.y, M2.u) annotation(
     Line(points = {{-78, 54}, {-70, 54}, {-70, -40}, {16, -40}, {16, -40}}, color = {0, 0, 127}));
   connect(ain.y, M3.u) annotation(
     Line(points = {{-78, 54}, {-70, 54}, {-70, -68}, {76, -68}, {76, -68}}, color = {0, 0, 127}));
   annotation(
     Diagram(coordinateSystem(extent = {{-200, -100}, {200, 100}})),
-    experiment(StartTime = 0, StopTime = 5400, Tolerance = 1e-6, Interval = 1),
+    experiment(StartTime = 0, StopTime = 9000, Tolerance = 1e-6, Interval = 1),
   __OpenModelica_commandLineOptions = "--matchingAlgorithm=PFPlusExt --indexReductionMethod=dynamicStateSelection -d=initialization,evaluateAllParameters,NLSanalyticJacobian,newInst +d=initialization ",
   __OpenModelica_simulationFlags(lv = "LOG_STATS", outputFormat = "mat", s = "dassl"));
 end Exp001_OL;

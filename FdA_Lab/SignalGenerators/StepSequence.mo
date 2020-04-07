@@ -4,7 +4,7 @@ model StepSequence
   extends FdA_Lab.BaseClasses.partial_SG;
   parameter Real offset=20;
   parameter Real[:] amplitudes={20,10};
-  parameter Real[:] sw_times={1000,2000};
+  parameter Real[:] sw_times={1800,3600};
   
 equation
   y = Functions.sequence_of_steps(time,offset,amplitudes,sw_times);

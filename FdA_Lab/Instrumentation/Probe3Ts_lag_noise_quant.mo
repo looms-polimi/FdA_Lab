@@ -3,13 +3,14 @@ within FdA_Lab.Instrumentation;
 model Probe3Ts_lag_noise_quant
   extends BaseClasses.partial_Probe3Ts;
   parameter SI.Time tau = 2 "probes time constant";
-  parameter Real q = 0.1 "output quantum";
-  constant Real An=0.15 "noise power";
-  constant SI.Time Tsn=0.5 "noise sampling time";
-  constant SI.Time Tfn=1 "noise filter time constant";
-  SI.Temperature T1(start=300,fixed=false);
-  SI.Temperature T2(start=300,fixed=false);
-  SI.Temperature Tp(start=300,fixed=false);
+  parameter Real qs = 0.2 "sensor (ADC) quantum";
+  parameter Real qo = 0.1 "output (scaling) quantum";
+  constant Real An=0.3 "noise power";
+  constant SI.Time Tsn=1 "noise sampling time";
+  constant SI.Time Tfn=2 "noise filter time constant";
+  SI.Temperature T1(start=273.15+20,fixed=false);
+  SI.Temperature T2(start=273.15+20,fixed=false);
+  SI.Temperature Tp(start=273.15+20,fixed=false);
   inner Modelica.Blocks.Noise.GlobalSeed globalSeed annotation(
     Placement(visible = true, transformation(origin = {-20, 80}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
 protected
@@ -24,13 +25,13 @@ protected
   Real np(start=0,fixed=true);
 equation
   // Connectors
-  oT1m = Functions.quantise(T1+n1,q);
-  oT2m = Functions.quantise(T2+n2,q);
-  oTpm = Functions.quantise(Tp+np,q);
+  oT1m = Functions.quantise(T1+n1,qo);
+  oT2m = Functions.quantise(T2+n2,qo);
+  oTpm = Functions.quantise(Tp+np,qo);
   // Core model
-  T1+tau*der(T1) = iT1;
-  T2+tau*der(T2) = iT2;
-  Tp+tau*der(Tp) = iTp;
+  T1+tau*der(T1) = Functions.quantise(iT1,qs);
+  T2+tau*der(T2) = Functions.quantise(iT2,qs);
+  Tp+tau*der(Tp) = Functions.quantise(iTp,qs);
   n1+Tfn*der(n1) = noiseT1.y;
   n2+Tfn*der(n2) = noiseT2.y;
   np+Tfn*der(np) = noiseTp.y;
