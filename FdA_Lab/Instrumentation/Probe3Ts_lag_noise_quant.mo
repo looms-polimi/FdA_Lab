@@ -3,7 +3,7 @@ within FdA_Lab.Instrumentation;
 model Probe3Ts_lag_noise_quant
   extends BaseClasses.partial_Probe3Ts;
   parameter SI.Time tau = 5 "probes time constant";
-  parameter Real qs = 0.1 "sensor quantum";
+  parameter Real qs = 0.05 "sensor quantum";
   parameter Real qo = 5/4096 "output quantum";
   constant Real An=0.3 "noise power";
   constant SI.Time Tsn=1 "noise sampling time";

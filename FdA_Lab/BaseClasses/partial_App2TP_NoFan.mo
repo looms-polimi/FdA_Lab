@@ -4,7 +4,7 @@ partial model partial_App2TP_NoFan
   parameter SI.HeatCapacity Ct1 = 2.1 "Transistor 1 heat capacity";
   parameter SI.HeatCapacity Ct2 = 1.8 "Transistor 2 heat capacity";
   parameter SI.HeatCapacity Cp = 0.2 "Plate heat capacity";
-  parameter SI.HeatCapacity Ca = 1 "Air (in box) heat capacity";
+  parameter SI.HeatCapacity Ca = 1.834 "Air (in box) heat capacity";
   parameter SI.HeatCapacity Cb = 100 "Box heat capacity";  
   parameter SI.ThermalConductance Gt1p = 0.045 "Transistor1-plate thermal cond";
   parameter SI.ThermalConductance Gt2p = 0.055 "Transistor1-plate thermal cond";
