@@ -4,7 +4,7 @@ model Exp003_CL_PI_DT_1dof_aw_ae
   extends Modelica.Icons.Example;
   FdA_Lab.Apparatuses.App2TP_noFan Apparatus annotation(
     Placement(visible = true, transformation(origin = {0, 0}, extent = {{-20, -20}, {20, 20}}, rotation = 0)));
-  FdA_Lab.Instrumentation.Probe3Ts_lag_noise Probes annotation(
+  FdA_Lab.Instrumentation.Probe3Ts_lag_noise_quant Probes annotation(
     Placement(visible = true, transformation(origin = {80, 0}, extent = {{-20, -20}, {20, 20}}, rotation = 0)));
   Modelica.Blocks.Sources.RealExpression Te(y = 273.15 + 20)  annotation(
     Placement(visible = true, transformation(origin = {-70, 48}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
