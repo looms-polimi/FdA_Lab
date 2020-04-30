@@ -1,0 +1,8 @@
+The Modelica library (folder FdA_Lab and subfolders) is licensed under a BSD 3-Clause Licence, Copyright (c) 2020 Alberto Leva, Silvano Seva; all rights reserved. The licence is here reported in the document BSD-3-CLAUSE.txt.
+
+The English documentation (folder Doc and subfolders) is licensed under a Creative Commons Attribution-ShareAlike 4.0 International licence, Copyright (c) 2020 Alberto Leva, Silvano Seva; all rights reserved. The licence is here reported in the document CC-BY-SA-4.0.txt.
+
+The "Fondamenti di Automatica" course material in Italian (folder FdA_courseware and subfolders) is licensed under a Creative Commons Attribution-ShareAlike 4.0 International licence, Copyright (c) 2020 Alberto Leva, Silvano Seva, Danilo Saccani, Chiara Cimino; all rights reserved. The licence is here reported in the document CC-BY-SA-4.0.txt.
+
+
+
