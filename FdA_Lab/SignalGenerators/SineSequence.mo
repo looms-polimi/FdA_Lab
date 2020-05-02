@@ -3,8 +3,8 @@ within FdA_Lab.SignalGenerators;
 model SineSequence
   extends FdA_Lab.BaseClasses.partial_SG;
   parameter Real offset=0;
-  parameter Real amplitude=20;
-  parameter Real start_time = 5400;
+  parameter Real amplitude=0;
+  parameter Real start_time = 0;
   parameter Real[:] periods={240,120,60};
   parameter Integer[:] n_periods={5,5,5};
   
