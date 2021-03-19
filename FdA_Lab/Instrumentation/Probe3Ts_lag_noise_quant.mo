@@ -5,7 +5,7 @@ model Probe3Ts_lag_noise_quant
   parameter SI.Time tau = 5 "probes time constant";
   parameter Real qs = 0.05 "sensor quantum";
   parameter Real qo = 5/4096 "output quantum";
-  constant Real An=0.3 "noise power";
+  parameter Real An=0.3 "noise power";
   constant SI.Time Tsn=1 "noise sampling time";
   constant SI.Time Tfn=2 "noise filter time constant";
   SI.Temperature T1(start=273.15+20,fixed=false);

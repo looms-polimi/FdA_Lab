@@ -9,7 +9,8 @@ equation
   Ct1 * der(T1) = P1 - Gt1p * (T1 - Tp) - Gt1ae * (T1 - Ta);
   Ct2 * der(T2) = P2 - Gt2p * (T2 - Tp) - Gt2ae * (T2 - Ta);
   Cp * der(Tp) = Gt1p * (T1 - Tp) + Gt2p * (T2 - Tp) - Gpae * (Tp - Ta);
-  Ca * der(Ta) = Gt1ae * (T1 - Ta) + Gt2ae * (T2 - Ta) + Gpae * (Tp - Ta) - Gab * (Ta - Tb);
+  Ca * der(Ta) = Gt1ae * (T1 - Ta) + Gt2ae * (T2 - Ta) + Gpae * (Tp - Ta) - Gab * (Ta - Tb)
+                 + (if iVR then wfanOn*1020*(Te-Ta) else 0);
   Cb * der(Tb) = Gab * (Ta - Tb) - Gbe * (Tb - Te);
 annotation(
     experiment(StartTime = 0, StopTime = 1, Tolerance = 1e-6, Interval = 0.002),

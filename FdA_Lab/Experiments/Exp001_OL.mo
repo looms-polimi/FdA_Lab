@@ -14,7 +14,7 @@ model Exp001_OL
     Placement(visible = true, transformation(origin = {-25, -5}, extent = {{-15, -15}, {15, 15}}, rotation = 0)));
   FdA_Lab.SignalGenerators.SineSequence sines annotation(
     Placement(visible = true, transformation(origin = {-160, 2}, extent = {{-20, -20}, {20, 20}}, rotation = 0)));
-  FdA_Lab.SignalGenerators.StepSequence steps annotation(
+  FdA_Lab.SignalGenerators.StepSequence steps(amplitudes = {20, 20, 20, 20, -20, -20, -20, -20, -20, 20}, offset = 20, sw_times = {100, 700, 1300, 900, 2900, 3200, 3800, 4100})  annotation(
     Placement(visible = true, transformation(origin = {-160, 60}, extent = {{-20, -20}, {20, 20}}, rotation = 0)));
   Modelica.Blocks.Math.Add ain annotation(
     Placement(visible = true, transformation(origin = {-90, 54}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));

@@ -5,6 +5,7 @@ model partial_App2TP_Fan
   parameter SI.ThermalConductance DGt1a = 0.012 "Gt1a increment when fan is on";
   parameter SI.ThermalConductance DGt2a = 0.009 "Gt2a increment when fan is on";
   parameter SI.ThermalConductance DGpa = 0.01 "Gpa increment when fan is on";
+  parameter SI.MassFlowRate wfanOn=1 "air mass flowrate when fan is on";
   SI.ThermalConductance Gt1ae,Gt2ae,Gpae;
   Modelica.Blocks.Interfaces.BooleanInput iVR "Fan on/off command" annotation(
     Placement(visible = true, transformation(origin = {-80, -40}, extent = {{-20, -20}, {20, 20}}, rotation = 0), iconTransformation(origin = {-120, -58}, extent = {{-20, -20}, {20, 20}}, rotation = 0)));
