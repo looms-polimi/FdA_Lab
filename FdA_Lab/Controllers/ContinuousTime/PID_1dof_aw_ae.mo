@@ -15,7 +15,7 @@ model PID_1dof_aw_ae
     Placement(visible = true, transformation(origin = {-130, 60}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Math.Feedback ae annotation(
     Placement(visible = true, transformation(origin = {60, 10}, extent = {{-10, 10}, {10, -10}}, rotation = -90)));
-  Modelica.Blocks.Nonlinear.Limiter sat(limitsAtInit = true, uMax = CSmax, uMin = CSmin)  annotation(
+  Modelica.Blocks.Nonlinear.Limiter sat(uMax = CSmax, uMin = CSmin)  annotation(
     Placement(visible = true, transformation(origin = {94, 60}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Math.Gain gTt(k = 1 / Tt) annotation(
     Placement(visible = true, transformation(origin = { -30, -22}, extent = {{10, -10}, {-10, 10}}, rotation = 0)));

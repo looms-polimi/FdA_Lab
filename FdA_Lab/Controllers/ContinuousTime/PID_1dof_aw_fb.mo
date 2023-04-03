@@ -12,13 +12,13 @@ model PID_1dof_aw_fb
     Placement(visible = true, transformation(origin = {-70, 66}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Math.Feedback fb annotation(
     Placement(visible = true, transformation(origin = {-130, 60}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Blocks.Nonlinear.Limiter satfb(limitsAtInit = true, uMax = CSmax, uMin = CSmin)  annotation(
+  Modelica.Blocks.Nonlinear.Limiter satfb(uMax = CSmax, uMin = CSmin)  annotation(
     Placement(visible = true, transformation(origin = {10, 60}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Math.Add ppi annotation(
     Placement(visible = true, transformation(origin = {-30, 60}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Continuous.FirstOrder FOfb(T = Ti, initType = Modelica.Blocks.Types.Init.InitialOutput)  annotation(
     Placement(visible = true, transformation(origin = {-10, 10}, extent = {{10, -10}, {-10, 10}}, rotation = 0)));
-  Modelica.Blocks.Nonlinear.Limiter satout(limitsAtInit = true, uMax = CSmax, uMin = CSmin) annotation(
+  Modelica.Blocks.Nonlinear.Limiter satout(uMax = CSmax, uMin = CSmin) annotation(
     Placement(visible = true, transformation(origin = {130, 60}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Math.Add ad annotation(
     Placement(visible = true, transformation(origin = {90, 60}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));

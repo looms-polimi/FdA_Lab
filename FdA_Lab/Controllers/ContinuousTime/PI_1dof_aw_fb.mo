@@ -10,7 +10,7 @@ model PI_1dof_aw_fb
     Placement(visible = true, transformation(origin = {-70, 66}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Math.Feedback fb annotation(
     Placement(visible = true, transformation(origin = {-130, 60}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
-  Modelica.Blocks.Nonlinear.Limiter sat(limitsAtInit = true, uMax = CSmax, uMin = CSmin)  annotation(
+  Modelica.Blocks.Nonlinear.Limiter sat(uMax = CSmax, uMin = CSmin)  annotation(
     Placement(visible = true, transformation(origin = {50, 60}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Math.Add ppi annotation(
     Placement(visible = true, transformation(origin = {-30, 60}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
