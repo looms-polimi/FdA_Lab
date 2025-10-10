@@ -23,6 +23,7 @@ model PI_1dof_aw_ae
     Placement(visible = true, transformation(origin = {-70, 10}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
   Modelica.Blocks.Continuous.Integrator I(k = K / Ti)  annotation(
     Placement(visible = true, transformation(origin = {-30, 10}, extent = {{-10, -10}, {10, 10}}, rotation = 0)));
+
 equation
   connect(SP, fb.u1) annotation(
     Line(points = {{-180, 60}, {-138, 60}, {-138, 60}, {-138, 60}}, color = {0, 0, 127}));
